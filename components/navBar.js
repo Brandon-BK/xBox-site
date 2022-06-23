@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Image from 'next/image';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,10 +13,18 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import Battery80OutlinedIcon from '@mui/icons-material/Battery80Outlined';
+import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
+import { List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
+import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import ForumTwoToneIcon from '@mui/icons-material/ForumTwoTone';
+import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
+import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
+import { bgcolor } from '@mui/system';
 
 var today = new Date();
 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() ;
+var time = today.getHours() + ":" + today.getMinutes();
 var dateTime = date + ' ' + time;
 
 const navBar = () => {
@@ -38,7 +47,7 @@ const navBar = () => {
   };
 
   return (
-    <AppBar position="static" color='secondary' sx={{ background: 'none', color: '#111116' }}>
+    <AppBar sx={{ background: "none", color: '#FFF',boxShadow:'none' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
@@ -51,14 +60,15 @@ const navBar = () => {
             src={'../images/xbox.png'}
           />
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0}}>
             <Tooltip title="Open settings">
+
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" />
+                <Avatar alt="K" />
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: '45px' , color:'#fff'}}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -73,7 +83,25 @@ const navBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-
+              
+              <List sx={{ width: '100%', maxWidth: 360, bgcolor: '#111', color: '#fff' }}>
+                <ListItem>
+                xbox logo
+                <GroupOutlinedIcon sx={{paddingLeft:"5"}}/>
+                <ForumTwoToneIcon sx={{paddingLeft:"5"}}/>
+                <EmojiEventsRoundedIcon sx={{paddingLeft:"5"}}/>
+                <IosShareRoundedIcon sx={{paddingLeft:"5"}}/>  
+                <Avatar/>
+                </ListItem>
+                <ListItem>
+                
+                  <ListItemText   />
+                </ListItem>
+                <ListItem>
+                    
+                  <ListItemText  />
+                </ListItem>
+              </List>
             </Menu>
           </Box>
 
@@ -81,18 +109,18 @@ const navBar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
-              fontWeight: 700,
+
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            userName
+            katlego
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -124,43 +152,36 @@ const navBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-<ite
+
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            xbox
-          </Typography>
+
 
 
           <Box m={1}
-            //margin
+            paddingLeft='15'
             display="flex"
             justifyContent="flex-end"
             alignItems="flex-end"
-           >
-            <Typography type="title" color="inherit" style={{ flex: 1 }}>
-              {time}
-            </Typography>
+            flex="1"
+          >
+
+
+            < HeadsetMicOutlinedIcon />
+            < Battery80OutlinedIcon />
+
+            {time}
           </Box>
         </Toolbar>
+
+
+
+
+
       </Container>
     </AppBar>
+
   );
 };
 export default navBar;
