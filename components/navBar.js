@@ -21,6 +21,7 @@ import ForumTwoToneIcon from '@mui/icons-material/ForumTwoTone';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 import { bgcolor } from '@mui/system';
+import { Divider } from '@mui/material';
 
 var today = new Date();
 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -47,10 +48,31 @@ const navBar = () => {
   };
 
   return (
-    <AppBar sx={{ background: "none", color: '#FFF',boxShadow:'none' }}>
+
+
+    <AppBar sx={{ background: "none", color: '#FFF', boxShadow: 'none' }}>
+
+
+
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <Box display="flex" flexDirection="row" height={100} >
+            <Box flexGrow={0} height={100}>
+              <AppBar position="sticky" sx={{ background: "#777", color: '#FFF', boxShadow: 'none' }}>
+                <Button sx={{ color: '#FFF'}}>try me</Button>
+                <Divider />
+                <Button sx={{ color: '#FFF'}}>try me</Button>
+                <Divider />
+                <Button sx={{ color: '#FFF'}}>try me2</Button>
+                <Divider />
+                <Button sx={{ color: '#FFF'}}>try me</Button>
+                <Divider />
+                <Button sx={{ color: '#FFF'}}>try me2</Button>
+              </AppBar>
+            </Box>
 
+
+          </Box>
           <Box
             component="img"
             sx={{
@@ -60,7 +82,7 @@ const navBar = () => {
             src={'../images/xbox.png'}
           />
 
-          <Box sx={{ flexGrow: 0}}>
+          <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
 
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -68,7 +90,7 @@ const navBar = () => {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' , color:'#fff'}}
+              sx={{ mt: '45px', color: '#fff' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -83,23 +105,23 @@ const navBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              
+
               <List sx={{ width: '100%', maxWidth: 360, bgcolor: '#111', color: '#fff' }}>
                 <ListItem>
-                xbox logo
-                <GroupOutlinedIcon sx={{paddingLeft:"5"}}/>
-                <ForumTwoToneIcon sx={{paddingLeft:"5"}}/>
-                <EmojiEventsRoundedIcon sx={{paddingLeft:"5"}}/>
-                <IosShareRoundedIcon sx={{paddingLeft:"5"}}/>  
-                <Avatar/>
+                  xbox logo
+                  <GroupOutlinedIcon sx={{ paddingLeft: "5" }} />
+                  <ForumTwoToneIcon sx={{ paddingLeft: "5" }} />
+                  <EmojiEventsRoundedIcon sx={{ paddingLeft: "5" }} />
+                  <IosShareRoundedIcon sx={{ paddingLeft: "5" }} />
+                  <Avatar />
                 </ListItem>
                 <ListItem>
-                
-                  <ListItemText   />
+
+                  <ListItemText />
                 </ListItem>
                 <ListItem>
-                    
-                  <ListItemText  />
+
+                  <ListItemText />
                 </ListItem>
               </List>
             </Menu>

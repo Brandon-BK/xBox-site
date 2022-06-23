@@ -15,7 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Homescreen() {
     return (
-        <Box>
+        <Box sx={{paddingLeft:10}}>
              
             <Box sx={{ flexGrow: 1, paddingTop: 10 }}>
             <Typography variant='h3' sx={{color:'#FFF',textTransform: 'uppercase' }}>Games</Typography> 
