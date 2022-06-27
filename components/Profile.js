@@ -13,6 +13,7 @@ import Link from 'next/link';
 
 
 
+
 const SecondSection = () => {
     return (
         <Box
@@ -73,9 +74,8 @@ const Profile = () => {
                         }}
                     >
                                 
-                        <Link href="/Homepage">
+                        <Link href={"/#homepage"} target="_blank">
                             <a
-                                target="_blank"
                                 rel="noreferrer"
                                 style={{
                                     height: 280,
