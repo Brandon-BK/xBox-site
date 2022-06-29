@@ -1,12 +1,14 @@
-import { IconButton, Stack } from '@mui/material'
+import { IconButton, Stack, Box } from '@mui/material'
 import React, { useContext } from 'react'
 import Grid from '@mui/material/Grid';
 import MicOffIcon from '@mui/icons-material/MicOff';
 import { AppProvider } from '../pages';
+import Apps from './Apps';
+import App1 from './Apps';
 
 
-const Homepage = () => {
-
+const Homepage = ({row}) => {
+  const { application } = useContext(AppProvider)
   
 
 
@@ -44,6 +46,31 @@ const Homepage = () => {
             </div>
           </Grid>
         </Grid>
+
+        <Box sx={{width:'100%',border:'1px solid white',mt:8,display:'flex',alignItems:'center'}}>
+        <Box sx={{height:'300px',width:'300px',background:'green',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',mr:7}}></Box>
+
+            <Box sx={{display:'flex'}}>
+              <Apps row={application.filter((app) => app.row === 2)} />
+            </Box>
+        </Box>
+
+
+        <Box sx={{width:'100%',border:'1px solid white',mt:8,display:'flex',alignItems:'center'}}>
+        <Box sx={{height:'300px',width:'300px',background:'green',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',mr:7}}></Box>
+
+            <Box sx={{display:'flex'}}>
+              <Apps row={application.filter((app) => app.row === 2)} />
+            </Box>
+        </Box>
+
+        <Box sx={{width:'100%',border:'1px solid white',mt:8,display:'flex',alignItems:'center'}}>
+        <Box sx={{height:'300px',width:'300px',background:'green',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',mr:7}}></Box>
+
+            <Box sx={{display:'flex'}}>
+              <Apps row={application.filter((app) => app.row === 2)} />
+            </Box>
+        </Box>
       </Stack>
     </div>
   )
