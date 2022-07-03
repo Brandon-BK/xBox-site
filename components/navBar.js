@@ -14,13 +14,14 @@ import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import ForumTwoToneIcon from '@mui/icons-material/ForumTwoTone';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
-import { Tab, Tabs, Typography } from '@mui/material';
+import { Avatar, Tab, Tabs, Typography } from '@mui/material';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import SiXbox from 'react-icons/si';
 import Battery80OutlinedIcon from '@mui/icons-material/Battery80Outlined';
 import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
 import AppBar from '@mui/material';
 import Toolbar from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 var today = new Date();
@@ -89,6 +90,8 @@ export default function SwipeableTemporaryDrawer() {
                 '&:hover': {
 
                   color: "#0f0",
+                  borderBottom: "2px solid #0f0",
+
                 },
               }),
             ]} /> <Divider />
@@ -98,6 +101,8 @@ export default function SwipeableTemporaryDrawer() {
                 '&:hover': {
 
                   color: "#0f0",
+                  borderBottom: "2px solid #0f0",
+
                 },
               }),
             ]} /><Divider />
@@ -107,6 +112,8 @@ export default function SwipeableTemporaryDrawer() {
                 '&:hover': {
 
                   color: "#0f0",
+                  borderBottom: "2px solid #0f0",
+
                 },
               }),
             ]} /><Divider />
@@ -116,6 +123,7 @@ export default function SwipeableTemporaryDrawer() {
                 '&:hover': {
 
                   color: "#0f0",
+                  borderBottom: "2px solid #0f0",
                 },
               }),
             ]} />
@@ -125,19 +133,16 @@ export default function SwipeableTemporaryDrawer() {
         {['Home', 'My games & apps'].map((text, index) => (
           <ListItem key={text} disablePadding  >
             <ListItemButton>
-              <ListItemIcon>
 
-                {index % 2 === 0 ? <HomeRoundedIcon /> : <MailIcon />}
-              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
       <Divider />
-      <List sx={{ bgcolor: '#3A3A3A', color: '#fff' }}>
+      <List sx={{ bgcolor: '#3A3A3A', color: '#fff'}}>
         {['Playing Remotely', 'Settings', 'Xbox Assist', 'Fortnite', 'K'].map((text, index) => (
-          <ListItem key={text} disablePadding >
+          <ListItem key={text} disablePadding sx={{ '&:hover':{borderBottom: "2px solid #0f0"}}} >
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <HomeRoundedIcon /> : <MailIcon />}
@@ -154,18 +159,31 @@ export default function SwipeableTemporaryDrawer() {
     <div>
       {['open'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Box sx={{backgroundColor:'none'}}>
+          <Box sx={{ backgroundColor: 'none' }}>
             <SwipeableDrawer
               anchor={anchor}
               open={state[anchor]}
               onClose={toggleDrawer(anchor, false)}
               onOpen={toggleDrawer(anchor, true)}
-             
+
             >
               {list(anchor)}
             </SwipeableDrawer>
-            <Button onClick={toggleDrawer(anchor, true)}>kot</Button>
-<Typography>Username</Typography>
+            <Button onClick={toggleDrawer(anchor, true)}>   <img
+                                src="./xicon.png"
+                                alt="profile"
+                                style={{
+                                    height: 30,
+                                    width: 30,
+                                    borderRadius: '50%',
+                                    objectFit: "cover",
+                                    objectPosition: "center",
+                                }}
+                            /></Button>
+            <Box>
+              <Typography>Username</Typography>
+              <Avatar />
+            </Box>
             <Box m={1}
               paddingTop='0'
               paddingLeft='15'
@@ -176,10 +194,11 @@ export default function SwipeableTemporaryDrawer() {
             >
 
 
+
               < HeadsetMicOutlinedIcon />
               < Battery80OutlinedIcon />
 
-              {time}
+              {dateTime}
             </Box>
           </Box>
         </React.Fragment>
